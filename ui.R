@@ -23,7 +23,7 @@ shinyUI(
         theme = shinytheme("flatly"),
         tags$head(tags$link(rel = "stylesheet", type = "text/css", href = "mystyle.css")),
         navbarPage(
-            title = strong("Hydroxychloroquine suflate (HCQ suflate)"),
+            title = strong("Hydroxychloroquine sulflate (HCQ sulflate)"),
             
             # simulation -------------------------------------------------
             # tabPanel("模拟预测",
@@ -85,7 +85,7 @@ shinyUI(
                                ),
                                titlePanel(h5(strong("HCQ plasma concentration range (ng/mL)"))),
                                sliderInput("concrange", label = NULL, min = 0, max = 5000, step = 0.1, value = c(20, 20)),
-                               h6("* Dose regime is the dosage of hydroxychloroquine suflate.")
+                               h6("* Dose regimen is the dosage of hydroxychloroquine sulflate.")
                            )
                     ),
                     column(8,
