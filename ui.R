@@ -3,7 +3,7 @@
 # Phone: 13971656760                                             #
 # email: xiaoyubocpuS@hotmail.com                                #
 # script created: Feb,24,2020                                    #
-# Software version: R 3.5.0                                      #
+# Software version: R 3.5.3                                      #
 ##################################################################
 #
 # This is the user-interface definition of a Shiny web application. You can
@@ -19,13 +19,16 @@ library(shinythemes)
 
 
 shinyUI(
+    
     fluidPage(
         theme = shinytheme("flatly"),
         tags$head(tags$link(rel = "stylesheet", type = "text/css", href = "mystyle.css")),
         navbarPage(
-            title = strong("Hydroxychloroquine sulflate (HCQ sulflate)"),
+            title = strong("Hydroxychloroquine sulfate (HCQ sulfate)"),
             
-            # simulation -------------------------------------------------
+            
+# simulation -------------------------------------------------
+
             # tabPanel("模拟预测",
             tabPanel(
                 strong("HCQ concentration prediction"),
@@ -85,7 +88,7 @@ shinyUI(
                                ),
                                titlePanel(h5(strong("HCQ plasma concentration range (ng/mL)"))),
                                sliderInput("concrange", label = NULL, min = 0, max = 5000, step = 0.1, value = c(20, 20)),
-                               h6("* Dose regimen is the dosage of hydroxychloroquine sulflate.")
+                               h6("* Dose regimen is the dosage of hydroxychloroquine sulfate.")
                            )
                     ),
                     column(8,
@@ -129,6 +132,41 @@ shinyUI(
                     img(src="LOGOdMed.png", height = 50)
                 )
             ),
+            
+            
+            
+# Who we are ? ------------------------------------------------------------
+            
+            tabPanel("Who we are ?",
+                     fluidRow(
+                         column(5,
+                                h3(HTML("<strong style='color:#ec4c3c;background-color:#F8F9F9'> EDCP </strong> Capability")),
+                                hr(),
+                                h4(HTML("<strong><body  style='color:#000000;background-color:#ffffff'> Innovative trial </body></strong>")),
+                                h5(HTML("<strong style='color:#000000'> - </strong> opimal early phase study design: FIH, POM, POC ")),
+                                h4(HTML("<strong><body  style='color:#000000;background-color:#ffffff'> Clinical pharmacology </body></strong>")),
+                                h5(HTML("<strong style='color:#000000'> - </strong> BA/BE, FE, DDI, mass balance, special populations, QTc")),
+                                h4(HTML("<strong><body  style='color:#000000;background-color:#ffffff'> PK/PD calculation and analysis </body></strong>")),
+                                h5(HTML("<strong style='color:#000000'> - </strong> NCA, exploratory PK/PD relationship analysis")),
+                                h4(HTML("<strong><body  style='color:#000000;background-color:#ffffff'> PK/PD modeling and simulation </body></strong>")),
+                                h5(HTML("<strong style='color:#000000'> - </strong> translational PKPD for safety and efficacy dose")),
+                                h5(HTML("<strong style='color:#000000'> - </strong> clinical PKPD for dose rationale on RP2D, RP3D")),
+                                h5(HTML("<strong style='color:#000000'> - </strong> covariates analysis, optimal sampling, pediatric extrapolation")),
+                                h3("  "),
+                                h4(HTML("<strong><body  style='color:#000000;background-color:#ffffff'> Strategic consultation </body></strong>")),
+                                h5(HTML("<strong style='color:#000000'> - </strong> CDP/TPP, bridging strategy, ethnic sensitivity assessment"))
+                                
+                         ),
+                         column(7,
+                                img(src="EDCP.png",height = 440)
+                         )
+                         
+                     )
+            ),
+            
+
+# footer ------------------------------------------------------------------
+
             footer = h5(HTML("dMed Copyright 2020 : 
                        <strong style='color:#ec4c3c;background-color:#F8F9F9'> E </strong>
                        arly <strong style='color:#ec4c3c;background-color:#F8F9F9'> D </strong> evelepment and 
